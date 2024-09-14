@@ -11,7 +11,7 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('--folder1', type=str)
     parser.add_argument('--folder2', type=str)
-    parser.add_argument('--model_path', type=str, default='facexlib/recognition/weights/arcface_resnet18.pth')
+    parser.add_argument('--model_path', type=str, default='/content/PuLID-FLUX/models/facexlib/arcface_resnet18.pth')
 
     args = parser.parse_args()
 

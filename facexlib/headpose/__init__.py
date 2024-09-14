@@ -11,8 +11,8 @@ def init_headpose_model(model_name, half=False, device='cuda', model_rootpath=No
     else:
         raise NotImplementedError(f'{model_name} is not implemented.')
 
-    model_path = load_file_from_url(
-        url=model_url, model_dir='facexlib/weights', progress=True, file_name=None, save_dir=model_rootpath)
+    model_path = '/content/PuLID-FLUX/models/facexlib/headpose_hopenet.pth'
+    # load_file_from_url(url=model_url, model_dir='facexlib/weights', progress=True, file_name=None, save_dir=model_rootpath)
     load_net = torch.load(model_path, map_location=lambda storage, loc: storage)['params']
     model.load_state_dict(load_net, strict=True)
     model.eval()

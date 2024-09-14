@@ -14,8 +14,8 @@ def init_alignment_model(model_name, half=False, device='cuda', model_rootpath=N
     else:
         raise NotImplementedError(f'{model_name} is not implemented.')
 
-    model_path = load_file_from_url(
-        url=model_url, model_dir='facexlib/weights', progress=True, file_name=None, save_dir=model_rootpath)
+    model_path = '/content/PuLID-FLUX/models/facexlib/alignment_WFLW_4HG.pth'
+    # load_file_from_url(url=model_url, model_dir='facexlib/weights', progress=True, file_name=None, save_dir=model_rootpath)
     model.load_state_dict(torch.load(model_path)['state_dict'], strict=True)
     model.eval()
     model = model.to(device)

@@ -12,8 +12,8 @@ def init_matting_model(model_name='modnet', half=False, device='cuda', model_roo
     else:
         raise NotImplementedError(f'{model_name} is not implemented.')
 
-    model_path = load_file_from_url(
-        url=model_url, model_dir='facexlib/weights', progress=True, file_name=None, save_dir=model_rootpath)
+    model_path = '/content/PuLID-FLUX/models/facexlib/matting_modnet_portrait.pth'
+    #load_file_from_url(url=model_url, model_dir='facexlib/weights', progress=True, file_name=None, save_dir=model_rootpath)
     # TODO: clean pretrained model
     load_net = torch.load(model_path, map_location=lambda storage, loc: storage)
     # remove unnecessary 'module.'
